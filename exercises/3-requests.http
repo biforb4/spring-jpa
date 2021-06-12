@@ -1,16 +1,16 @@
-GET http://localhost:8080/api/movies?size=3&page=0&sort=releaseDate,asc
+GET http://localhost:8081/api/movies?size=3&page=0&sort=releaseDate,asc
 
 ###
-GET http://localhost:8080/api/movies?size=3&page=0&sort=releaseDate,desc
+GET http://localhost:8081/api/movies?size=3&page=0&sort=releaseDate,desc
 
 ###
-GET http://localhost:8080/api/movies?title=r
+GET http://localhost:8081/api/movies?title=r
 
 ###
-GET http://localhost:8080/api/popular-movies
+GET http://localhost:8081/api/popular-movies
 
 ###
-PUT http://localhost:8080/api/movies/1
+PUT http://localhost:8081/api/movies/3f274737-d74a-4e51-aee6-72bfac54d6c3
 Content-Type: application/json
 
 {

@@ -1,7 +1,7 @@
-GET http://localhost:8080/api/movies/1
+GET http://localhost:8081/api/movies/d39cba4a-f62e-4424-9e95-8f1dd03904f0
 
 ###
-POST http://localhost:8080/api/movies
+POST http://localhost:8081/api/movies
 Content-Type: application/json
 
 {
@@ -18,9 +18,11 @@ Content-Type: application/json
     "birthDate": "1979-10-20"
   }
 }
+###
+GET http://localhost:8081/api/movies
 
 ###
-DELETE http://localhost:8080/api/movies/1
+DELETE http://localhost:8081/api/movies/d39cba4a-f62e-4424-9e95-8f1dd03904f0
 
 ###
 DELETE http://localhost:8080/api/movies?genre=ACTION
