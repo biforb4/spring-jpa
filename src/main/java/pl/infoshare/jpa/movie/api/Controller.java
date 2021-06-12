@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pl.infoshare.jpa.movie.model.Genre;
 import pl.infoshare.jpa.movie.model.Movie;
+import pl.infoshare.jpa.movie.model.MovieSummary;
 import pl.infoshare.jpa.movie.repository.MovieRepository;
 
 import javax.transaction.Transactional;
@@ -28,17 +29,17 @@ public class Controller {
     }
 
     @GetMapping("/api/movies")
-    public Page<Movie> getMovies(Pageable pageable, @RequestParam Optional<String> title) {
+    public Page<MovieSummary> getMovies(Pageable pageable, @RequestParam Optional<String> title) {
 
         if(title.isPresent()) {
             return repository.findAllByTitleContaining(title.get(), pageable);
         }
-        return repository.findAll(pageable);
+        return repository.findAllProjectedBy(pageable);
 
     }
 
     @GetMapping("/api/popular-movies")
-    public List<Movie> getPopularMovies() {
+    public List<MovieSummary> getPopularMovies() {
         return repository.findMostPopular();
     }
 

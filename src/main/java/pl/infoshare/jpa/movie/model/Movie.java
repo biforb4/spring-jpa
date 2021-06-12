@@ -3,6 +3,7 @@ package pl.infoshare.jpa.movie.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -30,6 +31,8 @@ public class Movie {
     private BigDecimal score;
     @JsonProperty("thumbnail")
     private String cover;
+    @LastModifiedDate
+    private LocalDate lastModified;
 
     public Movie(String title, String description, Director director, Genre genre, Duration duration, LocalDate releaseDate, BigDecimal score, String cover) {
         this.title = title;
